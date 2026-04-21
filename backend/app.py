@@ -3,8 +3,7 @@ app.py
 Build a few jobs, register them, run them, print a summary.
 """
 
-
-from models import EmailJob, DataProcessingJob
+from models import EmailJob, DataProcessingJob, PriorityJob
 
 from task_manager import TaskManager
 
@@ -12,17 +11,13 @@ from executor import Executor
 
 
 def build_jobs():
-
     return [
-
         EmailJob(1, "user@example.com"),
-
         DataProcessingJob(2, "dataset_A"),
-
         EmailJob(3, "admin@example.com"),
-
         DataProcessingJob(4, "dataset_B"),
-
+        PriorityJob(5, "Backup database", "high"),
+        PriorityJob(6, "Generate weekly report", "medium"),
     ]
 
 
